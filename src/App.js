@@ -2,8 +2,15 @@ import { useState } from 'react';
 import './styles.css';
 
 function Square({ value, onSquareClick }) {
+  let squareColorClass = '';
+  if (value === 'X') {
+    squareColorClass = 'black';
+  } else if (value === 'O') {
+    squareColorClass = 'white';
+  }
+
   return (
-    <button className={`square ${value}`} onClick={onSquareClick}>
+    <button className={`square ${squareColorClass}`} onClick={onSquareClick}>
       {value}
     </button>
   );
@@ -28,7 +35,7 @@ function Board({ xIsNext, squares, onPlay }) {
   if (winner) {
     status = 'Winner: ' + winner;
   } else {
-    status = 'Next player: ' + (xIsNext ? 'X' : 'O');
+    status = 'Next player: ' + (xIsNext ? 'Dark' : 'Light');
   }
 
   return (
@@ -114,3 +121,4 @@ function calculateWinner(squares) {
   }
   return null;
 }
+

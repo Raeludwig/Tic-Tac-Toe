@@ -62,3 +62,12 @@ body {
   margin-left: 20px;
 }
 
+.black {
+  background-color: black;
+  color:white;
+}
+
+.white {
+  background-color: white;
+}
+
