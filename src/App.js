@@ -52,7 +52,7 @@ function Board({ xIsNext, squares, onPlay }) {
   } else if (winner === 'O') {
     status = 'Winner: The Light has won (Sorry, no cookies)';
   } else {
-    status = 'Next player: ' + (xIsNext ? 'Dark' : 'Light');
+    status = 'Next player: ' + (xIsNext ? 'Dark Side' : 'Light Side');
   }
 
   return (
