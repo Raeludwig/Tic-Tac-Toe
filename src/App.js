@@ -1,8 +1,9 @@
 import { useState } from 'react';
+import './styles.css';
 
 function Square({ value, onSquareClick }) {
   return (
-    <button className="square" onClick={onSquareClick}>
+    <button className={`square ${value}`} onClick={onSquareClick}>
       {value}
     </button>
   );
@@ -31,8 +32,8 @@ function Board({ xIsNext, squares, onPlay }) {
   }
 
   return (
-    <>
-      <div className="status">{status}</div>
+    <div className="board">
+      <div className={`status ${xIsNext ? 'light' : 'dark'}`}>{status}</div>
       <div className="board-row">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
         <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
@@ -48,7 +49,7 @@ function Board({ xIsNext, squares, onPlay }) {
         <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
         <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
       </div>
-    </>
+    </div>
   );
 }
 
@@ -73,7 +74,7 @@ export default function Game() {
     if (move > 0) {
       description = 'Go to move #' + move;
     } else {
-      description = 'Go to game start';
+      description = 'Start over';
     }
     return (
       <li key={move}>
@@ -83,7 +84,7 @@ export default function Game() {
   });
 
   return (
-    <div className="game">
+    <div className={`game ${xIsNext ? 'light' : 'dark'}`}>
       <div className="game-board">
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
