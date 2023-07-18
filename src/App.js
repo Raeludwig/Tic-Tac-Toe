@@ -14,7 +14,7 @@ function Square({ value, onSquareClick }) {
       {value === 'X' && (
         <img
           className="symbol-image-dark"
-          src="https://cdn11.bigcommerce.com/s-t3aq9bcqq7/images/stencil/500x659/products/1524/3645/LU162614A1-3__21722.1655237999.jpg?c=2"
+          src="https://neosabers.com/wp-content/uploads/2022/06/113_105.jpg"
           alt="X"
         />
       )}
@@ -52,7 +52,7 @@ function Board({ xIsNext, squares, onPlay }) {
   } else if (winner === 'O') {
     status = 'Winner: The Light has won (Sorry, no cookies)';
   } else {
-    status = 'Next player: ' + (xIsNext ? 'Dark Side' : 'Light Side');
+    status = 'Take your swing: ' + (xIsNext ? 'Dark Side' : 'Light Side');
   }
 
   return (
@@ -108,6 +108,7 @@ export default function Game() {
   });
 
   return (
+    <div className="container">
     <div className={`game ${xIsNext ? 'light' : 'dark'}`}>
       <div className="game-board">
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
@@ -116,6 +117,7 @@ export default function Game() {
         <ul>{moves}</ul>
       </div>
     </div>
+  </div>
   );
 }
 

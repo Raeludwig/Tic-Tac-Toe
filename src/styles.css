@@ -15,28 +15,39 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.board {
-  flex: 1;
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.board {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 20px;
 }
 
 .game {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vh;
 }
 
-.game.dark{
+/* .game.dark{
   border-radius: ;
-}
+} */
 
-/* 
-light and dark mode */
+
+/* light and dark mode */
+
 .dark {
   background-color: #000;
   color:white;
@@ -51,13 +62,13 @@ light and dark mode */
   float: center;
   font-size: 24px;
   font-weight: bold;
-  line-height: 100px;
-  height: 100px;
+  line-height: 25vh;
+  height: 25vh;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 100px;
+  width: 25vh;
 }
 
 /* .square.black {
@@ -68,6 +79,7 @@ light and dark mode */
 color:red;
 
 } */
+
 
 .board-row:after {
   clear: both;
@@ -85,12 +97,16 @@ color:red;
   margin-top: 20px;
   width: 100%;
   text-align: center;
-  margin-left: 20px;
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .game-board {
-  margin-bottom: 20px; /* Add margin-bottom to create space between board and info */
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -119,7 +135,22 @@ button.square{
   background-color: transparent;
   color:inherit;
   cursor: pointer;
+
 }
+
+ul {
+  padding: 0;
+}
+
+.div.game-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 
 
 
