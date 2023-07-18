@@ -42,17 +42,15 @@ function Board({ xIsNext, squares, onPlay }) {
     }
     onPlay(nextSquares);
 
-    if (calculateWinner(nextSquares)) {
-      // Winner declared, handle it here
-    }
+    if (calculateWinner(nextSquares)) {}
   }
 
   const winner = calculateWinner(squares);
   let status;
   if (winner === 'X') {
-    status = 'Winner: Dark';
+    status = 'Winner: The Dark Side has won! (We do still have cookies)';
   } else if (winner === 'O') {
-    status = 'Winner: Light';
+    status = 'Winner: The Light has won (Sorry, no cookies)';
   } else {
     status = 'Next player: ' + (xIsNext ? 'Dark' : 'Light');
   }
