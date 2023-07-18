@@ -14,14 +14,14 @@ function Square({ value, onSquareClick }) {
       {value === 'X' && (
         <img
           className="symbol-image-dark"
-          src="https://www.nicepng.com/png/full/52-528030_the-waning-crescent-moon-is-the-very-last.png"
+          src="https://cdn11.bigcommerce.com/s-t3aq9bcqq7/images/stencil/500x659/products/1524/3645/LU162614A1-3__21722.1655237999.jpg?c=2"
           alt="X"
         />
       )}
       {value === 'O' && (
         <img
           className="symbol-image-light"
-          src="https://easydrawingguides.com/wp-content/uploads/2018/09/Sun-10.png"
+          src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Green_lightsaber_transparent.png"
           alt="O"
         />
       )}
@@ -103,9 +103,9 @@ export default function Game() {
       description = 'Start over';
     }
     return (
-      <li key={move}>
+      <ul key={move}>
         <button onClick={() => jumpTo(move)}>{description}</button>
-      </li>
+      </ul>
     );
   });
 
@@ -115,7 +115,7 @@ export default function Game() {
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className="game-info">
-        <ol>{moves}</ol>
+        <ul>{moves}</ul>
       </div>
     </div>
   );
