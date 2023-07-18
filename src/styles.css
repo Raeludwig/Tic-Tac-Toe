@@ -71,6 +71,19 @@ body {
   width: 25vh;
 }
 
+@media (max-width: 630px) {
+  .board {
+    max-width: 400px;
+    margin: 0 auto; /* Add this line to center the smaller board */
+  }
+  
+  .square {
+    font-size: 18px;
+    line-height: 80px;
+    height: 80px;
+    width: 80px;
+  }
+}
 /* .square.black {
   color:red;
 } 
