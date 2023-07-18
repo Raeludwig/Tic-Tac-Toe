@@ -57,7 +57,6 @@ function Board({ xIsNext, squares, onPlay }) {
 
   return (
     <div className="board">
-      <div className={`status ${xIsNext ? 'light' : 'dark'}`}>{status}</div>
       <div className="board-row">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
         <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
@@ -93,6 +92,16 @@ export default function Game() {
     setCurrentMove(nextMove);
   }
 
+  const winner = calculateWinner(currentSquares);
+  let status;
+  if (winner === 'X') {
+    status = 'Winner: The Dark Side has won! (We do still have cookies)';
+  } else if (winner === 'O') {
+    status = 'Winner: The Light has won (Sorry, no cookies)';
+  } else {
+    status = 'Take your swing: ' + (xIsNext ? 'Dark Side' : 'Light Side');
+  }
+
   const moves = history.map((squares, move) => {
     let description;
     if (move > 0) {
@@ -109,15 +118,16 @@ export default function Game() {
 
   return (
     <div className="container">
-    <div className={`game ${xIsNext ? 'light' : 'dark'}`}>
-      <div className="game-board">
-        <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
-      </div>
-      <div className="game-info">
-        <ul>{moves}</ul>
+      <div className="status">{status}</div>
+      <div className={`game ${xIsNext ? 'light' : 'dark'}`}>
+        <div className="game-board">
+          <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+        </div>
+        <div className="game-info">
+          <ul>{moves}</ul>
+        </div>
       </div>
     </div>
-  </div>
   );
 }
 

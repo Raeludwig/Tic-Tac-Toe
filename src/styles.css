@@ -1,15 +1,14 @@
 * {
   box-sizing: border-box;
-  font-family: 'Star Wars', sans-serif; 
+  font-family: 'Star Wars', sans-serif;
 }
 
 #root {
   font-family: 'Star Wars', sans-serif;
 }
 
-
 body {
-  font-family: 'Star Wars', sans-serif;                               
+  font-family: 'Star Wars', sans-serif;
   margin: 20px;
   /* padding: 0; */
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -20,12 +19,17 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  flex-direction: column; /* Change flex-direction to column */
+}
+
+.winner-status {
+  margin-bottom: 10px; /* Add margin at the bottom for spacing */
+  text-align: center; /* Align the text in the center */
 }
 
 .board {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   max-width: 800px;
@@ -33,24 +37,30 @@ body {
   padding-top: 20px;
 }
 
+.board-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -1px; /* Remove the bottom margin */
+}
+
 .game {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  width: 100vh;
+  width: 100%;
 }
 
 /* .game.dark{
   border-radius: ;
 } */
 
-
 /* light and dark mode */
 
 .dark {
   background-color: #000;
-  color:white;
+  color: white;
 }
 
 .light {
@@ -59,7 +69,7 @@ body {
 }
 
 .square {
-  float: center;
+  flex: 0 0 25vh; /* Use flex to set the width of each square */
   font-size: 24px;
   font-weight: bold;
   line-height: 25vh;
@@ -68,20 +78,24 @@ body {
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 25vh;
+  border: 1px solid black;
 }
 
-@media (max-width: 630px) {
+@media (max-width: 636px) {
   .board {
+    flex-wrap: nowrap;
     max-width: 400px;
     margin: 0 auto; /* Add this line to center the smaller board */
   }
-  
+
   .square {
     font-size: 18px;
     line-height: 80px;
     height: 80px;
     width: 80px;
+  }
+  .board-row {
+    flex-wrap: wrap;
   }
 }
 /* .square.black {
@@ -93,18 +107,19 @@ color:red;
 
 } */
 
-
 .board-row:after {
   clear: both;
   content: '';
   display: table;
 }
 
-.status {
+.status.light {
   margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-
-
 
 .game-info {
   margin-top: 20px;
@@ -122,7 +137,6 @@ color:red;
   align-items: center;
 }
 
-
 /* Light saber images */
 .symbol-image-dark {
   max-width: 100%;
@@ -136,35 +150,20 @@ color:red;
   object-fit: fit;
 }
 
-button{
-  border:none;
+button {
+  border: none;
   background-color: transparent;
-  color:inherit;
+  color: inherit;
 }
 
-button.square{
+button.square {
   border: 1px solid red;
   border-radius: 5px;
   background-color: transparent;
-  color:inherit;
+  color: inherit;
   cursor: pointer;
-
 }
 
 ul {
   padding: 0;
 }
-
-.div.game-info{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-
-
-
-
-
-
