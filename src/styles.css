@@ -22,16 +22,16 @@ body {
 .square {
   /* background-color: #fff;
   color: #000; */
-  float: left;
+  float: center;
   font-size: 24px;
   font-weight: bold;
-  line-height: 34px;
-  height: 34px;
+  line-height: 100px;
+  height: 100px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 34px;
+  width: 100px;
 }
 
 .square.dark {
@@ -71,3 +71,18 @@ body {
   background-color: white;
 }
 
+
+
+.symbol-image-dark {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  background-color: black;
+}
+
+.symbol-image-light {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  background-color: Yellow;
+}

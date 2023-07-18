@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './styles.css';
 
 function Square({ value, onSquareClick }) {
@@ -11,7 +11,20 @@ function Square({ value, onSquareClick }) {
 
   return (
     <button className={`square ${squareColorClass}`} onClick={onSquareClick}>
-      {value}
+      {value === 'X' && (
+        <img
+          className="symbol-image-dark"
+          src="https://www.nicepng.com/png/full/52-528030_the-waning-crescent-moon-is-the-very-last.png"
+          alt="X"
+        />
+      )}
+      {value === 'O' && (
+        <img
+          className="symbol-image-light"
+          src="https://easydrawingguides.com/wp-content/uploads/2018/09/Sun-10.png"
+          alt="O"
+        />
+      )}
     </button>
   );
 }
@@ -28,6 +41,10 @@ function Board({ xIsNext, squares, onPlay }) {
       nextSquares[i] = 'O';
     }
     onPlay(nextSquares);
+
+    if (calculateWinner(nextSquares)) {
+      // Winner declared, handle it here
+    }
   }
 
   const winner = calculateWinner(squares);
@@ -121,4 +138,3 @@ function calculateWinner(squares) {
   }
   return null;
 }
-
