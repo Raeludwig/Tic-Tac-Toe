@@ -27,22 +27,27 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
+.game.dark{
+  border-radius: ;
+}
 
-
+/* 
+light and dark mode */
 .dark {
   background-color: #000;
-  color: #fff;
+  color:white;
 }
 
 .light {
   background-color: #fff;
-  color: #000;
+  color: black;
 }
 
 .square {
-
   float: center;
   font-size: 24px;
   font-weight: bold;
@@ -55,14 +60,14 @@ body {
   width: 100px;
 }
 
-.square.dark {
-  background-color: #000;
-}
+/* .square.black {
+  color:red;
+} 
 
-.square.light {
-  background-color: #fff;
-  color: #000;
-}
+.square.white {
+color:red;
+
+} */
 
 .board-row:after {
   clear: both;
@@ -74,13 +79,7 @@ body {
   margin-bottom: 10px;
 }
 
-.game {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-}
+
 
 .game-info {
   margin-top: 20px;
@@ -94,17 +93,34 @@ body {
   margin-bottom: 20px; /* Add margin-bottom to create space between board and info */
 }
 
+
+/* Light saber images */
 .symbol-image-dark {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  background-color: red;
 }
 
 .symbol-image-light {
   max-width: 100%;
   max-height: 100%;
   object-fit: fit;
-background-color: white;
 }
+
+button{
+  border:none;
+  background-color: transparent;
+  color:inherit;
+}
+
+button.square{
+  border: 1px solid red;
+  border-radius: 5px;
+  background-color: transparent;
+  color:inherit;
+  cursor: pointer;
+}
+
+
+
 
