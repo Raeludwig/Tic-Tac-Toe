@@ -47,6 +47,11 @@ MIT
 
 ---
 ## Deployment
-https://raeludwig.github.io/Raes-portfolio/
+https://raeludwig.github.io/Tic-Tac-Toe/
 
 ## Examples
+![image](https://github.com/Raeludwig/Tic-Tac-Toe/assets/118871515/ac3147ea-fae2-484b-bf86-cce1940cf998)
+
+![image](https://github.com/Raeludwig/Tic-Tac-Toe/assets/118871515/b8592be3-dee3-4eb2-8ffc-2a043983460a)
+
+![image](https://github.com/Raeludwig/Tic-Tac-Toe/assets/118871515/d070bfc8-cd14-462a-9622-11471650c54f)
